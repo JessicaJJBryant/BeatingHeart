@@ -8,6 +8,12 @@ h1 {
 h1:hover {
     font-size: 70px;
 }
+h2 {
+    text-align: center;
+    font-family: monospace;
+    font-size: 40px;
+    color:rgb(52, 90, 173);
+}
 #back {
     position: fixed;
     padding: 0;
