@@ -69,3 +69,9 @@ h1:hover {
         transform: scale(0.6)rotate(-45deg);
     }
 }
+figure {
+    text-align: center;
+    font-family: monospace;
+    font-size: 30px;
+    color:rgb(52, 90, 173);
+}
