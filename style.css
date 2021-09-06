@@ -1,3 +1,13 @@
+h1 {
+    margin-top: 50px;
+    text-align: center;
+    font-family:monospace;
+    font-size: 50px; 
+    color:rgb(52, 90, 173);  
+} 
+h1:hover {
+    font-size: 70px;
+}
 #back {
     position: fixed;
     padding: 0;
