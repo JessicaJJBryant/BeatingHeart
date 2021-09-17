@@ -112,4 +112,10 @@ a {
     #sleeping-baby {
         max-height: 775px;
     }
+    h1 {
+        font-size: 35px;
+    }
+    h2 {
+        font-size: 25px;
+    }
 }
