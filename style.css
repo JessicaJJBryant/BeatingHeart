@@ -80,3 +80,16 @@ figure {
     font-size: 30px;
     color:rgb(52, 90, 173);
 }
+#update {
+    animation-name: backdiv;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+img {
+    display: block;
+    margin: auto;
+    max-height: 750px;
+    border: 30px dotted #8babd1;
+    border-radius: 40%;
+
+}
