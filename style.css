@@ -3,9 +3,13 @@
     padding: 0;
 }
 body {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    font-family: monospace;
+    color:rgb(52, 90, 173); 
     background: rgb(179, 212, 240);
+    /* this animates the background */
     animation-name: backdiv;
     animation-duration: 750ms;
     animation-iteration-count: infinite;
@@ -19,15 +23,16 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    min-height: 70px;
-    margin-top: 50px;
+    min-height: 60px;
+    margin-top: clamp(2px, 3rem, 10rem);
 }
 #heart {
     position: absolute;
-    background-color: rgb(52, 90, 173);;
+    background-color: rgb(52, 90, 173);
     height: 50px;
     width: 50px;
     transform: rotate(-45deg);
+    /* this animates the heart */
     animation-name: beat;
     animation-duration: 750ms;
     animation-iteration-count: infinite;
@@ -61,28 +66,22 @@ body {
     }
 }
 h1 {
-    margin: 10px;
-    text-align: center;
-    font-family:monospace;
-    font-size: 50px; 
-    color:rgb(52, 90, 173);  
+    margin: 5px;
+    padding: 5px;
+    /* using clamp so the font-size is responsive */
+    font-size: clamp(1.5rem, 5vw, 5rem); 
 } 
 h2 {
     margin: 10px;
-    text-align: center;
-    font-family: monospace;
-    font-size: 40px;
-    color:rgb(52, 90, 173);
+    font-size: clamp(1.25rem, 4vw, 4rem); 
 }
 figure {
-    text-align: center;
-    font-family: monospace;
-    font-size: 30px;
-    color:rgb(52, 90, 173);
+    font-size: clamp(1.25rem, 4vw, 4rem);
 }
 #update {
+    /* this slows down the background animation on the update */
     animation-name: backdiv;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
 }
 #sleeping-baby {
@@ -92,30 +91,26 @@ figure {
     align-items: center;
 }
 img {
-    max-height: 500px;
-    max-width: 500px;
+    /* tried clamp with height and width but it didn't work because the different orientations allowed for different min and max for each (stretched pic) */
+    height: 50%;
+    width: 50%;
     border: 30px dotted #8babd1;
     border-radius: 40%;
 }
 a {
-    display: block;
-    text-align: center;
-    font-family: monospace;
-    font-size: 40px;
+    font-size: clamp(1.5rem, 5vw, 5rem);
     color:rgb(52, 90, 173);
 }
-@media (orientation: portrait) {
-    .container {
-        min-height: 30px;
-        margin-top: 20px;
-    }
-    #sleeping-baby {
-        max-height: 775px;
-    }
-    h1 {
-        font-size: 35px;
-    }
-    h2 {
-        font-size: 25px;
+/* cut out all media queries but this one by using clamp on this simple page */
+/* To reduce animation for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
     }
 }
